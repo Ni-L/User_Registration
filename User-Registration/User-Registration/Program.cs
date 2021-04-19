@@ -7,45 +7,56 @@ namespace User_Registration
     {
         static void Main(string[] args)
         {
-            //Entery point 
-
-            Console.WriteLine("******Welcome To User Registration******");
-            Console.WriteLine();
-            string Pattern = "^([a-z]{3,})([.]{0,1}[a-z]*)@([a-z]{2}).([a-z]{2})([.]{1}[a-z]{2}){0,1}$"; //pattern using for email.
-
-            Program p = new Program(); // create object
-            p.ValidName(Pattern);
+            //Entery point For Check Password Valid or not
+            //WelCome message
+            Console.WriteLine("*********Welcome To User Registration**********");
+            //Regular Expresion pattern for password minimum 8 char.
+            string pattern = "^[A-Za-z0-9]{8,}$";
+            // Creating object
+            Program p = new Program(); 
+            p.ValidPass(pattern);
             Console.WriteLine();
             Console.Read();
         }
-
-        public void ValidName(string Pattern) //method to validate string
+        //Creating Method to validate string
+        public void ValidPass(string pattern) 
         {
-            Console.WriteLine("Validation Of The Email");
-            Regex regex = new Regex(Pattern);
-            IterateLoop(regex);  //calling method
+            //Write
+            Console.WriteLine("Validation Of The Password");
+            //Creating Object of Regex 
+            Regex regex = new Regex(pattern);
+            //Calling Method for itereting 
+            IterateLoop(regex); 
         }
-
+        //Creating Method For Iterating 
         public void IterateLoop(Regex regex)
         {
-            int i = 0; //initialize i value
+            //initialize i value
+            int i = 0; 
+            //Starting the While Loop 
             while (i != 1)
             {
-                Console.WriteLine("Enter Email");
-                string email = Console.ReadLine();
-                bool result = regex.IsMatch(email);  //call the IsMatch metod to determine whether a match is present
-
-                if (result == true)  ////check result is true or not using if and hence using bool
+                Console.WriteLine("Enter Password");
+                string Password = Console.ReadLine();
+                //call the IsMatch metod to determine whether a match is present
+                bool result = regex.IsMatch(Password);
+                //check result is true or not using if and hence using bool
+                //Starting of If Loop
+                if (result == true)  
                 {
-                    Console.WriteLine("Valid email");
+                    //If the Password is true then print 
+                    Console.WriteLine("Valid password");
                     i = 1;
                 }
                 else
                 {
-                    Console.WriteLine("Enter email in this format : abc.xyz@bl.co.in");
+                    //If False then Print
+                    Console.WriteLine("Enter minimum eight character");
                 }
-
+                //End of If Loop
             }
+            //End of While Loop
         }
+
     }
 }
