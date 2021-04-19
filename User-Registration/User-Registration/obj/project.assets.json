@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Aniket\\.nuget\\packages\\": {}
+    "C:\\Users\\Aishwarya\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aniket\\source\\repos\\User_Registration\\User-Registration\\User-Registration\\User-Registration.csproj",
+      "projectUniqueName": "C:\\Users\\Aishwarya\\source\\repos\\User_Registration\\User-Registration\\User-Registration\\User-Registration.csproj",
       "projectName": "User-Registration",
-      "projectPath": "C:\\Users\\Aniket\\source\\repos\\User_Registration\\User-Registration\\User-Registration\\User-Registration.csproj",
-      "packagesPath": "C:\\Users\\Aniket\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aniket\\source\\repos\\User_Registration\\User-Registration\\User-Registration\\obj\\",
+      "projectPath": "C:\\Users\\Aishwarya\\source\\repos\\User_Registration\\User-Registration\\User-Registration\\User-Registration.csproj",
+      "packagesPath": "C:\\Users\\Aishwarya\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Aishwarya\\source\\repos\\User_Registration\\User-Registration\\User-Registration\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Aniket\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aishwarya\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
