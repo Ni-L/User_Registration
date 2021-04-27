@@ -10,9 +10,9 @@ namespace User_Registration
             //Entery point 
             UserDetailsPattern pattern = new UserDetailsPattern();
             Console.WriteLine("******Welcome To User Registration******");
-            Console.WriteLine("Enter First Name:");
-            string firstName = Console.ReadLine();
-            Console.WriteLine(pattern.ValidateFirstName(firstName));
+            Console.WriteLine("Enter Last Name:");
+            string lastname = Console.ReadLine();
+            Console.WriteLine(pattern.ValidateLastName(lastname));
 
           
         }

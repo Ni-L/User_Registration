@@ -11,8 +11,8 @@ namespace User_Registration
     {
         public static string namePattern = "^[A-Z]{1}[A-Za-z]{2,}$";
 
-        public Func<string, string> ValidateFirstName = x => Regex.IsMatch(x, namePattern) ? "Valid First Name" :
-          throw new HandleException(HandleException.ExceptionType.INVALID_FIRSTNAME, "Invalid First Name");
+        public Func<string, string> ValidateLastName = x => Regex.IsMatch(x, namePattern) ? "Valid last Name" :
+          throw new HandleException(HandleException.ExceptionType.INVALID_LASTNAME, "Invalid First Name");
 
        
     }

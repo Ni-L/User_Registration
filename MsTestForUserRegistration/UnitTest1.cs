@@ -18,22 +18,22 @@ namespace MsTestForUserRegistration
         /// Validate first name
         /// </summary>
         [TestMethod]
-        [DataRow("Nilima")]
+        [DataRow("Wadal")]
         [DataRow("Snehal")]
         [DataRow("Bajaj")]
         [DataRow("Ashu")]
         [DataRow("Raju")]
         [DataRow("ashwini")]
-        [DataRow("Priya")]
+        [DataRow("Gunde")]
         [DataRow("Akhilesh")]
         [DataRow("Nita")]
         [DataRow("Shivam")]
         [DataRow("aadesh")]
-        public void Given_FirstName_StartsWithCapital_MinThreeCharacter_ShouldReturnTrue(string name)
+        public void Given_LastName_StartsWithCapital_MinThreeCharacter_ShouldReturnTrue(string name)
         {
             try
             {
-                string result = userDetailsPattern.ValidateFirstName(name);
+                string result = userDetailsPattern.ValidateLastName(name);
             }
             catch (HandleException e)
             {
@@ -44,18 +44,18 @@ namespace MsTestForUserRegistration
         /// If entered Invalid last name should return false.
         /// </summary>
         [TestMethod]
-        [DataRow("Niliam")]
+        [DataRow("Wadal")]
         [DataRow("shivam")]
         [DataRow("Ashu")]
         [DataRow("Snehal")]
         [DataRow("Nita")]
         [DataRow("aadesh")]
         [DataRow("ashwini")]
-        public void GivenFirstName_IfNotStartsWithCapital_ButMinThreeCharacter_ShouldReturnFalse(string invalidFirstName)
+        public void Given_LastName_IfNotStartsWithCapital_ButMinThreeCharacter_ShouldReturnFalse(string invalidFirstName)
         {
             try
             {
-                string result = userDetailsPattern.ValidateFirstName(invalidFirstName);
+                string result = userDetailsPattern.ValidateLasttName(invalidLAstName);
             }
             catch (HandleException e)
             {
