@@ -1,51 +1,57 @@
-﻿using System;
+using System;
 using System.Text.RegularExpressions;
 
-namespace User_Registration
+namespace User-Registration
 {
+    //Patterns for Email
     class Program
     {
         static void Main(string[] args)
-        {
-            //Entery point 
+        {    
 
-            Console.WriteLine("******Welcome To User Registration******");
-            Console.WriteLine();
-            string Pattern = "^([a-z]{3,})([.]{0,1}[a-z]*)@([a-z]{2}).([a-z]{2})([.]{1}[a-z]{2}){0,1}$"; //pattern using for email.
-
-            Program p = new Program(); // create object
-            p.ValidName(Pattern);
+            Console.WriteLine("********Welcome To User Registration*********");
+            Console.WriteLine();//For Empty Space
+            string pattern = "^([A-Za-z\\d-_\\+]+)(\\.[A-Za-z\\d-_]+)?@([a-zA-Z\\d]+)\\.([a-zA-Z]{2,4})(\\.[A-Za-z]{2,4})?$"; //pattern for email sample 
+                                                                                                                              // ASSIGING SOME VALID SAMPLES
+            string[] inputs = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com", "abc", "abc@.com.my", "abc123@gmail.a", "abc123@.com", "abc123@.com.com",
+                              ".abc@abc.com", "abc()*@gmail.com", "abc@%*.com", "abc..2002@gmail.com", "abc.@gmail.com",
+                                "abc@abc@gmail.com", "abc@gmail.com.1a", "abc@gmail.com.aa.au" };//Possible Outputs
+            
+            //Create Object of Class
+            Program p = new Program(); 
+            p.ValidPass(inputs, pattern);//Calling Valid or Not
             Console.WriteLine();
             Console.Read();
         }
 
-        public void ValidName(string Pattern) //method to validate string
+        public void ValidPass(string[] arr, string pattern) //method for validating string
         {
-            Console.WriteLine("Validation Of The Email");
-            Regex regex = new Regex(Pattern);
-            IterateLoop(regex);  //calling method
+
+            Console.WriteLine("Validation Of The email");
+            Regex regex = new Regex(pattern);//Creating Regex Object
+            IterateLoop(arr, regex);  //calling method
         }
 
-        public void IterateLoop(Regex regex)
+        public void IterateLoop(string[] arr, Regex regex)
         {
-            int i = 0; //initialize i value
-            while (i != 1)
+            for (int i = 0; i < arr.Length; i++)    //check each name string using for loop 
+
             {
-                Console.WriteLine("Enter Email");
-                string email = Console.ReadLine();
-                bool result = regex.IsMatch(email);  //call the IsMatch metod to determine whether a match is present
+
+                bool result = regex.IsMatch(arr[i]);  //call the IsMatch metod to determine whether a match is present
 
                 if (result == true)  ////check result is true or not using if and hence using bool
                 {
-                    Console.WriteLine("Valid email");
-                    i = 1;
+                    Console.WriteLine(arr[i] + "---->" + "Valid email");
+
                 }
                 else
                 {
-                    Console.WriteLine("Enter email in this format : abc.xyz@bl.co.in");
-                }
+                    Console.WriteLine(arr[i] + "--->" + "Invalid email");
+                }//End of If loop
 
-            }
+            }//End of For Loop
         }
+
     }
 }
