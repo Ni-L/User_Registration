@@ -14,26 +14,29 @@ namespace MsTestForUserRegistration
             UserDetailsPattern = new UserDetailsPattern();
         }
         /// <summary>
-        /// passing invalid mobile number patterns should return invalid mobile number
+        /// Pssing all possible invalid password patterns should return invalid password.
         /// </summary>
         [TestMethod]
-        [DataRow("91 984875374")]
-        [DataRow("91 7766556347")]
-        [DataRow("91 8773435")]
-        [DataRow("91 9347976655")]
-        [DataRow("91 986655")]
-        [DataRow("91 98776655")]
-        [DataRow("9195899445588776655")]
-        [DataRow("91975076655")]
-        public void GivenInvalidMobileNumber_ShouldReturnFalse(string invalidMobile)
+        [DataRow("Nilima32")]
+        [DataRow("nain.558767")]
+        [DataRow("Nainau-")]
+        [DataRow("dhsfilhd")]
+        [DataRow("Nilima#@")]
+        [DataRow("Nil#")]
+        [DataRow("Naina%5345")]
+        [DataRow("Nilima@123")]
+        [DataRow("12434@gdhg")]
+        [DataRow("Nilima$7")]
+        [DataRow("Nilima@#$%123")]
+        public void GivenInvalidPassword_ShouldReturnFalse(string invalidPassword)
         {
             try
             {
-                string result = userDetailsPattern.ValidateMobileNumber(invalidMobile);
+                string result = userDetailsPattern.ValidatePassword(invalidPassword);
             }
             catch (HandleException e)
             {
-                Assert.AreEqual("Invalid mobile number", e.Message);
+                Assert.AreEqual("Invalid password", e.Message);
             }
         }
     }
