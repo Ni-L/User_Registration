@@ -29,3 +29,4 @@ C:\Users\Aishwarya\source\repos\User_Registration\User-Registration\User-Registr
 C:\Users\Aishwarya\source\repos\User_Registration\User-Registration\User-Registration\obj\Debug\net5.0\ref\User-Registration.dll
 C:\Users\Aishwarya\source\repos\User_Registration\User-Registration\User-Registration\obj\Debug\net5.0\User-Registration.pdb
 C:\Users\Aishwarya\source\repos\User_Registration\User-Registration\User-Registration\obj\Debug\net5.0\User-Registration.genruntimeconfig.cache
+C:\Users\Aishwarya\source\repos\User_Registration\User-Registration\User-Registration\obj\Debug\net5.0\User-Registration.csprojAssemblyReference.cache

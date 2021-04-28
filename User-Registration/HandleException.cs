@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 namespace User_Registration
-{
+{/// <summary>
+/// Exception HAndling Class
+/// </summary>
     public class HandleException : Exception
     {
         public enum ExceptionType

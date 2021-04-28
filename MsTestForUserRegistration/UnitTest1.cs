@@ -13,55 +13,27 @@ namespace MsTestForUserRegistration
         {
             UserDetailsPattern = new UserDetailsPattern();
         }
-
         /// <summary>
-        /// Validate first name
+        /// Test Method to pass invalid email id.
         /// </summary>
         [TestMethod]
-        [DataRow("Wadal")]
-        [DataRow("Snehal")]
-        [DataRow("Bajaj")]
-        [DataRow("Ashu")]
-        [DataRow("Raju")]
-        [DataRow("ashwini")]
-        [DataRow("Gunde")]
-        [DataRow("Akhilesh")]
-        [DataRow("Nita")]
-        [DataRow("Shivam")]
-        [DataRow("aadesh")]
-        public void Given_LastName_StartsWithCapital_MinThreeCharacter_ShouldReturnTrue(string name)
+        [DataRow("shalu@gmail")]
+        [DataRow("shalu@gmail.comm")]
+        [DataRow("shalu@gmail.com.ind.us")]
+        [DataRow("shalu.#100@gmail")]
+        [DataRow("shalu11@gmail.com.a12")]
+        [DataRow("shalu@gmail.com.12sa")]
+        [DataRow("_shalu@gmail.com")]
+        public void GivenEmailId_WhenIsNotProper_ShouldReturnFalse(string emailInvalid)
         {
             try
             {
-                string result = userDetailsPattern.ValidateLastName(name);
+                string result = userDetailsPattern.ValidateEmail(emailInvalid);
             }
             catch (HandleException e)
             {
-                Assert.AreEqual("Valid First Name", e.Message);
+                Assert.AreEqual("Invalid email id", e.Message);
             }
         }
-        /// <summary>
-        /// If entered Invalid last name should return false.
-        /// </summary>
-        [TestMethod]
-        [DataRow("Wadal")]
-        [DataRow("shivam")]
-        [DataRow("Ashu")]
-        [DataRow("Snehal")]
-        [DataRow("Nita")]
-        [DataRow("aadesh")]
-        [DataRow("ashwini")]
-        public void Given_LastName_IfNotStartsWithCapital_ButMinThreeCharacter_ShouldReturnFalse(string invalidFirstName)
-        {
-            try
-            {
-                string result = userDetailsPattern.ValidateLasttName(invalidLAstName);
-            }
-            catch (HandleException e)
-            {
-                Assert.AreEqual("Invalid First Name", e.Message);
-            }
-        }
-
     }
 }
