@@ -12,10 +12,8 @@ namespace User_Registration
     public class UserDetailsPattern
     {
         //Pattern for Finding
-        public static string mailIdPattern = "^[0-9a-zA-Z]+([+_.-][0-9a-zA-Z]+)*@[a-zA-Z0-9]+([.][a-zA-Z]{2,3}){1,2}$";
-
-        public Func<string, string> ValidateEmail = x => Regex.IsMatch(x, mailIdPattern) ? "Valid mailID" :
-          throw new HandleException(HandleException.ExceptionType.INVALID_EMAIL_ID, "Invalid email id");
-
+        public static string mobileNumberPattern = "^[1-9]{2}[ ][0-9]{10}";
+        public Func<string, string> ValidateMobileNumber = x => Regex.IsMatch(x, mobileNumberPattern) ? "Valid mobile number" :
+             throw new HandleException(HandleException.ExceptionType.INVALID_MOBILE_NUMBER, "Invalid mobile number");
     }
 }

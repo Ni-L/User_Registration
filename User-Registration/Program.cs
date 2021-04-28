@@ -9,11 +9,9 @@ namespace User_Registration
         {
             //Entery point 
             UserDetailsPattern pattern = new UserDetailsPattern();
-            Console.WriteLine("******Welcome To User Registration******");
-            Console.WriteLine("Enter Email ID:");
-            string emailID = Console.ReadLine();
-            Console.WriteLine(pattern.ValidateEmail(emailID));
-
+            Console.WriteLine("Enter Mobile Number:");
+            string mobileNumber = Console.ReadLine();
+            Console.WriteLine(pattern.ValidateMobileNumber(mobileNumber));
         }
     }
 }

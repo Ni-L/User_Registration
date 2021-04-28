@@ -14,25 +14,26 @@ namespace MsTestForUserRegistration
             UserDetailsPattern = new UserDetailsPattern();
         }
         /// <summary>
-        /// Test Method to pass invalid email id.
+        /// passing invalid mobile number patterns should return invalid mobile number
         /// </summary>
         [TestMethod]
-        [DataRow("shalu@gmail")]
-        [DataRow("shalu@gmail.comm")]
-        [DataRow("shalu@gmail.com.ind.us")]
-        [DataRow("shalu.#100@gmail")]
-        [DataRow("shalu11@gmail.com.a12")]
-        [DataRow("shalu@gmail.com.12sa")]
-        [DataRow("_shalu@gmail.com")]
-        public void GivenEmailId_WhenIsNotProper_ShouldReturnFalse(string emailInvalid)
+        [DataRow("91 984875374")]
+        [DataRow("91 7766556347")]
+        [DataRow("91 8773435")]
+        [DataRow("91 9347976655")]
+        [DataRow("91 986655")]
+        [DataRow("91 98776655")]
+        [DataRow("9195899445588776655")]
+        [DataRow("91975076655")]
+        public void GivenInvalidMobileNumber_ShouldReturnFalse(string invalidMobile)
         {
             try
             {
-                string result = userDetailsPattern.ValidateEmail(emailInvalid);
+                string result = userDetailsPattern.ValidateMobileNumber(invalidMobile);
             }
             catch (HandleException e)
             {
-                Assert.AreEqual("Invalid email id", e.Message);
+                Assert.AreEqual("Invalid mobile number", e.Message);
             }
         }
     }
