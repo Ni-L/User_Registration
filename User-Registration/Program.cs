@@ -7,11 +7,7 @@ namespace User_Registration
     {
         static void Main(string[] args)
         {
-            //Entery point 
-            UserDetailsPattern pattern = new UserDetailsPattern();
-            Console.WriteLine("Enter Mobile Number:");
-            string mobileNumber = Console.ReadLine();
-            Console.WriteLine(pattern.ValidateMobileNumber(mobileNumber));
+           
         }
     }
 }
